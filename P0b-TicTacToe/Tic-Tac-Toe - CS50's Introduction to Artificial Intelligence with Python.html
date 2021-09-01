@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta property="og:description" content="This course explores the concepts and algorithms at the foundation of modern artificial intelligence, diving into the ideas that give rise to technologies like game-playing engines, handwriting recognition, and machine translation. Through hands-on projects, students gain exposure to the theory behind graph search algorithms, classification, optimization, reinforcement learning, and other topics in artificial intelligence and machine learning as they incorporate them into their own Python programs. By course&#39;s end, students emerge with experience in libraries for machine learning as well as knowledge of artificial intelligence principles that enable them to design intelligent systems of their own.">
+
+<meta property="og:image" content="https://img.youtube.com/vi/TA5ZJm1ZYS4/maxresdefault.jpg"><meta property="og:title" content="Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python"><link href="https://cs50.harvard.edu/ai/2020/favicon.ico?1603304737" rel="icon">
+
+<!-- http://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/jquery.min.js.baixados"></script><script type="text/javascript" src="chrome-extension://akedoggjiebfbfgkmdcgchkkknefnnbe/dedica.js?host=desconto.teniscerto.com"></script>
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/popper.min.js.baixados"></script>
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/bootstrap.min.js.baixados"></script>
+
+<!-- https://bootstrap-table.com/docs/getting-started/introduction/ -->
+<link href="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/bootstrap-table.min.css" rel="stylesheet">
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/bootstrap-table.min.js.baixados"></script>
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/bootstrap-table-mobile.min.js.baixados"></script>
+
+<!-- https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use -->
+<link href="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/all.min.css" rel="stylesheet">
+
+<!-- https://momentjs.com/, https://momentjs.com/timezone/ -->
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/moment.min.js.baixados"></script>
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/moment-timezone-with-data.min.js.baixados"></script>
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/luxon.min.js.baixados"></script>
+
+
+
+<link href="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/page.css" rel="stylesheet">
+<script src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/jekyll-theme-cs50.js.baixados"></script>
+
+<title _msthash="149916" _msttexthash="3271723" _msthidden="1">Tic-Tac-Toe - CS50's Introduction to Artificial Intelligence with Python</title>
+</head><evlist></evlist>
+
+    <body>
+
+        
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <aside class="col-md" style="height: 722px; top: 0px;">
+ 
+                    <header><h1 data-id="cs50sintroduction-to-artificial-intelligence-with-python"><a href="https://cs50.harvard.edu/ai/2020/" _msthash="1137422" _msttexthash="3461640">CS50’s<br>Introduction to Artificial Intelligence with Python</a></h1>
+
+<p _msthash="1113242" _msttexthash="252148">OpenCourseWare</p>
+
+<p _msthash="1113827" _msttexthash="689299"><a href="https://brianyu.me/">Brian Yu</a><br>
+<a href="mailto:brian@cs.harvard.edu">brian@cs.harvard.edu</a></p>
+
+<p><font _mstmutation="1" _msthash="1114412" _msttexthash="772928"><a href="https://cs.harvard.edu/malan/" _mstmutation="1">David J. Malan</a><br _mstmutation="1">
+<a href="mailto:malan@harvard.edu" _mstmutation="1">malan@harvard.edu</a></font><br>
+<a href="https://www.facebook.com/dmalan" class="mr-2"><i class="fab fa-facebook-f"></i></a><a href="https://github.com/dmalan" class="mr-2"><i class="fab fa-github"></i></a><a href="https://www.instagram.com/davidjmalan/" class="mr-2"><i class="fab fa-instagram"></i></a><a href="https://www.linkedin.com/in/malan/" class="mr-2"><i class="fab fa-linkedin"></i></a><a href="https://www.quora.com/profile/David-J-Malan" class="mr-2"><i class="fab fa-quora"></i></a><a href="https://www.reddit.com/user/davidjmalan" class="mr-2"><i class="fab fa-reddit-alien"></i></a><a href="https://twitter.com/davidjmalan" class="mr-2"><i class="fab fa-twitter"></i></a></p></header>
+
+                    
+
+                    <button aria-controls="nav" aria-expanded="false" class="btn btn-sm collapsed d-md-none" data-target="aside &gt; nav" data-toggle="collapse" _msthash="969020" _msttexthash="45591" _msthidden="1">
+                        Menu
+                    </button>
+
+                    <nav class="collapse d-md-block" id="nav"><hr>
+
+<ol start="0">
+  <li><a href="https://cs50.harvard.edu/ai/2020/weeks/0/" _msthash="182507" _msttexthash="74607">Search</a></li>
+  <li><a href="https://cs50.harvard.edu/ai/2020/weeks/1/" _msthash="182754" _msttexthash="133263">Knowledge</a></li>
+  <li><a href="https://cs50.harvard.edu/ai/2020/weeks/2/" _msthash="183001" _msttexthash="186108">Uncertainty</a></li>
+  <li><a href="https://cs50.harvard.edu/ai/2020/weeks/3/" _msthash="183248" _msttexthash="211029">Optimization</a></li>
+  <li><a href="https://cs50.harvard.edu/ai/2020/weeks/4/" _msthash="183495" _msttexthash="113035">Learning</a></li>
+  <li><a href="https://cs50.harvard.edu/ai/2020/weeks/5/" _msthash="183742" _msttexthash="263302">Neural Networks</a></li>
+  <li><a href="https://cs50.harvard.edu/ai/2020/weeks/6/" _msthash="183989" _msttexthash="110916">Language</a></li>
+</ol>
+
+<hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.harvard.edu/ai/2020/certificate/" _msthash="183911" _msttexthash="262639">CS50 Certificate</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.harvard.edu/ai/2020/faqs/" _msthash="184158" _msttexthash="37557">FAQs</a></li>
+</ul>
+
+<hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="184457" _msttexthash="345397"><a href="https://cs50.harvard.edu/ai/ed" _mstmutation="1">Ed Discussion</a> for Q&amp;A</font></li>
+  <li data-marker="*" class="small"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://us.edstem.org/quickstart/ed-discussion.pdf" _msthash="184704" _msttexthash="279136">Quick Start Guide</a></li>
+</ul>
+
+<hr>
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.edx.org/ai" _msthash="197964" _msttexthash="29887">edX</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://itunes.apple.com/us/course/cs50s-introduction-to-artificial-intelligence-with-python/id1505432709" _msthash="198224" _msttexthash="93028">iTunes U</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://www.youtube.com/playlist?list=PLhQjrBD2T382Nz7z1AEXmioc27axa19Kv" _msthash="198484" _msttexthash="93340">YouTube</a></li>
+</ul>
+
+<hr>
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.noticeable.io/" _msthash="198549" _msttexthash="131586">Changelog</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.statuspage.io/" _msthash="198809" _msttexthash="152984">Status Page</a></li>
+</ul>
+
+<hr>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span>
+    <p><a href="https://cs50.harvard.edu/ai/2020/communities/" _msthash="285844" _msttexthash="184210">Communities</a></p>
+  </li>
+</ul>
+
+<ul class="small fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://discord.gg/cs50" _msthash="199329" _msttexthash="93990">Discord</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://www.facebook.com/groups/cs50/" _msthash="199589" _msttexthash="227864">Facebook Group</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://www.facebook.com/cs50/" _msthash="199849" _msttexthash="192907">Facebook Page</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://github.com/cs50" _msthash="200109" _msttexthash="72332">GitHub</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://gitter.im/cs50/x" _msthash="200369" _msttexthash="78260">Gitter</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://instagram.com/cs50" _msthash="200629" _msttexthash="134732">Instagram</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://www.linkedin.com/groups/7437240/" _msthash="200889" _msttexthash="224146">LinkedIn Group</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://www.linkedin.com/school/CS50/" _msthash="201149" _msttexthash="189189">LinkedIn Page</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://www.quora.com/topic/CS50" _msthash="201409" _msttexthash="61217">Quora</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://cs50.edx.org/slack" _msthash="212433" _msttexthash="58305">Slack</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://www.snapchat.com/add/cs50" _msthash="212706" _msttexthash="112788">Snapchat</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="https://twitter.com/cs50" _msthash="212979" _msttexthash="98995">Twitter</a></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><a href="http://www.youtube.com/subscription_center?add_user=cs50tv" _msthash="213252" _msttexthash="93340">YouTube</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://cs50.harvardshop.com/"><img src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/GGMdcKt.png" alt="Harvard Shop"></a></p>
+
+<hr>
+
+<p><a href="https://cs50.harvard.edu/ai/2020/license/" class="small"><i class="fab fa-creative-commons mr-1"></i><font _mstmutation="1" _msthash="147082" _msttexthash="93288">License</font></a></p></nav>
+
+                    <footer></footer>
+
+                </aside>
+
+                <main class="col-md markdown-body" style="margin-bottom: 0px; margin-top: 0px;">
+
+                    <a data-id="" id="tic-tac-toe" style="top: 0px;"></a><h1><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#tic-tac-toe" _msthash="671476" _msttexthash="149851">Tic-Tac-Toe</a></h1>
+
+<p _msthash="652483" _msttexthash="2235324">Using Minimax, implement an AI to play Tic-Tac-Toe optimally.</p>
+
+<p><img src="./Tic-Tac-Toe - CS50&#39;s Introduction to Artificial Intelligence with Python_files/game.png" alt="Tic-Tac-Toe Game"></p>
+
+<a data-id="" id="when-to-do-it" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#when-to-do-it" _msthash="673322" _msttexthash="148811">When to Do It</a></h2>
+
+<p _msthash="653848" _msttexthash="551434">By <span data-local="2020-12-31T23:59:00-05:00" data-boundary="window" data-toggle="tooltip" data-trigger="focus" title="" data-original-title="sexta-feira, 1 de janeiro de 2021 01:59 Horário Padrão de Brasília" class="text-nowrap" tabindex="0">sex., 1 de jan. de 2021 01:59 BRT</span>.</p>
+
+<a data-id="" id="how-to-get-help" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#how-to-get-help" _msthash="674258" _msttexthash="197353">How to Get Help</a></h2>
+
+<ol>
+  <li _msthash="905164" _msttexthash="326222">Ask questions on Ed!</li>
+  <li _msthash="905697" _msttexthash="3907813">Ask questions on CS50’s various online fora!</li>
+</ol>
+
+<a data-id="" id="getting-started" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#getting-started" _msthash="675194" _msttexthash="256386">Getting Started</a></h2>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="908674" _msttexthash="6525207">Download the distribution code from <a href="https://cdn.cs50.net/ai/2020/x/projects/0/tictactoe.zip" _mstmutation="1">https://cdn.cs50.net/ai/2020/x/projects/0/tictactoe.zip</a> and unzip it.</font></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="909207" _msttexthash="5597124">Once in the directory for the project, run  to install the required Python package () for this project.</font><code class="highlighter-rouge">pip3 install -r requirements.txt</code><code class="highlighter-rouge">pygame</code></li>
+</ul>
+
+<a data-id="" id="understanding" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#understanding" _msthash="695006" _msttexthash="232141">Understanding</a></h2>
+
+<p><font _mstmutation="1" _msthash="674960" _msttexthash="74125727">There are two main files in this project:  and .  contains all of the logic for playing the game, and for making optimal moves.  has been implemented for you, and contains all of the code to run the graphical interface for the game. Once you’ve completed all the required functions in , you should be able to run  to play against your AI!</font><code class="highlighter-rouge">runner.py</code><code class="highlighter-rouge">tictactoe.py</code><code class="highlighter-rouge">tictactoe.py</code><code class="highlighter-rouge">runner.py</code><code class="highlighter-rouge">tictactoe.py</code><code class="highlighter-rouge">python runner.py</code></p>
+
+<p><font _mstmutation="1" _msthash="675428" _msttexthash="16288168">Let’s open up  to get an understanding for what’s provided. First, we define three variables: , , and , to represent possible moves of the board.</font><code class="highlighter-rouge">tictactoe.py</code><code class="highlighter-rouge">X</code><code class="highlighter-rouge">O</code><code class="highlighter-rouge">EMPTY</code></p>
+
+<p><font _mstmutation="1" _msthash="675896" _msttexthash="80905643">The function  returns the starting state of the board. For this problem, we’ve chosen to represent the board as a list of three lists (representing the three rows of the board), where each internal list contains three values that are either , , or .
+What follows are functions that we’ve left up to you to implement!</font><code class="highlighter-rouge">initial_state</code><code class="highlighter-rouge">X</code><code class="highlighter-rouge">O</code><code class="highlighter-rouge">EMPTY</code></p>
+
+<a data-id="" id="specification" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#specification" _msthash="696930" _msttexthash="229970">Specification</a></h2>
+
+<div class="alert alert-warning" data-alert="warning" role="alert">
+  <p _msthash="932750" _msttexthash="31604859">Beginning <strong>1 July 2020</strong>, an automated tool will begin assisting the staff in enforcing the constraints in the below specification. Your submission will fail if any of these are not handled properly or if you modify functions other than as permitted.</p>
+</div>
+
+<p><font _mstmutation="1" _msthash="677300" _msttexthash="1125449">Complete the implementations of , , , , , , and .</font><code class="highlighter-rouge">player</code><code class="highlighter-rouge">actions</code><code class="highlighter-rouge">result</code><code class="highlighter-rouge">winner</code><code class="highlighter-rouge">terminal</code><code class="highlighter-rouge">utility</code><code class="highlighter-rouge">minimax</code></p>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="936611" _msttexthash="11092016">The  function should take a  state as input, and return which player’s turn it is (either  or ).
+    </font><code class="highlighter-rouge">player</code><code class="highlighter-rouge">board</code><code class="highlighter-rouge">X</code><code class="highlighter-rouge">O</code><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1438398" _msttexthash="6827158">In the initial game state,  gets the first move. Subsequently, the player alternates with each additional move.</font><code class="highlighter-rouge">X</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1439074" _msttexthash="5663463">Any return value is acceptable if a terminal board is provided as input (i.e., the game is already over).</font></li>
+    </ul>
+  </li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="937157" _msttexthash="4726046">The  function should return a  of all of the possible actions that can be taken on a given board.
+    </font><code class="highlighter-rouge">actions</code><code class="highlighter-rouge">set</code><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1437722" _msttexthash="14261286">Each action should be represented as a tuple  where  corresponds to the row of the move (, , or ) and  corresponds to which cell in the row corresponds to the move (also , , or ).</font><code class="highlighter-rouge">(i, j)</code><code class="highlighter-rouge">i</code><code class="highlighter-rouge">0</code><code class="highlighter-rouge">1</code><code class="highlighter-rouge">2</code><code class="highlighter-rouge">j</code><code class="highlighter-rouge">0</code><code class="highlighter-rouge">1</code><code class="highlighter-rouge">2</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1438399" _msttexthash="3664323">Possible moves are any cells on the board that do not already have an  or an  in them.</font><code class="highlighter-rouge">X</code><code class="highlighter-rouge">O</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1439075" _msttexthash="2996175">Any return value is acceptable if a terminal board is provided as input.</font></li>
+    </ul>
+  </li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="937703" _msttexthash="6725563">The  function takes a  and an  as input, and should return a new board state, without modifying the original board.
+    </font><code class="highlighter-rouge">result</code><code class="highlighter-rouge">board</code><code class="highlighter-rouge">action</code><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1438879" _msttexthash="3465696">If  is not a valid action for the board, your program should <a href="https://docs.python.org/3/tutorial/errors.html#raising-exceptions" _mstmutation="1">raise an exception</a>.</font><code class="highlighter-rouge">action</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1439555" _msttexthash="20088029">The returned board state should be the board that would result from taking the original input board, and letting the player whose turn it is make their move at the cell indicated by the input action.</font></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1440231" _msttexthash="84991751">Importantly, the original board should be left unmodified: since Minimax will ultimately require considering many different board states during its computation. This means that simply updating a cell in  itself is not a correct implementation of the  function. You’ll likely want to make a <a href="https://docs.python.org/3/library/copy.html#copy.deepcopy" _mstmutation="1">deep copy</a> of the board first before making any changes.</font><code class="highlighter-rouge">board</code><code class="highlighter-rouge">result</code></li>
+    </ul>
+  </li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="938249" _msttexthash="4286529">The  function should accept a  as input, and return the winner of the board if there is one.
+    </font><code class="highlighter-rouge">winner</code><code class="highlighter-rouge">board</code><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1438814" _msttexthash="8042359">If the X player has won the game, your function should return . If the O player has won the game, your function should return .</font><code class="highlighter-rouge">X</code><code class="highlighter-rouge">O</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1439490" _msttexthash="5061979">One can win the game with three of their moves in a row horizontally, vertically, or diagonally.</font></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1440166" _msttexthash="13516737">You may assume that there will be at most one winner (that is, no board will ever have both players with three-in-a-row, since that would be an invalid board state).</font></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1440842" _msttexthash="8808943">If there is no winner of the game (either because the game is in progress, or because it ended in a tie), the function should return .</font><code class="highlighter-rouge">None</code></li>
+    </ul>
+  </li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="938795" _msttexthash="5692453">The  function should accept a  as input, and return a boolean value indicating whether the game is over.
+    </font><code class="highlighter-rouge">terminal</code><code class="highlighter-rouge">board</code><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1439360" _msttexthash="11878672">If the game is over, either because someone has won the game or because all cells have been filled without anyone winning, the function should return .</font><code class="highlighter-rouge">True</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1440036" _msttexthash="3028948">Otherwise, the function should return  if the game is still in progress.</font><code class="highlighter-rouge">False</code></li>
+    </ul>
+  </li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="939341" _msttexthash="3922633">The  function should accept a terminal  as input and output the utility of the board.
+    </font><code class="highlighter-rouge">utility</code><code class="highlighter-rouge">board</code><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1439906" _msttexthash="7098494">If X has won the game, the utility is . If O has won the game, the utility is . If the game has ended in a tie, the utility is .</font><code class="highlighter-rouge">1</code><code class="highlighter-rouge">-1</code><code class="highlighter-rouge">0</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1440582" _msttexthash="1188161">You may assume  will only be called on a  if  is .</font><code class="highlighter-rouge">utility</code><code class="highlighter-rouge">board</code><code class="highlighter-rouge">terminal(board)</code><code class="highlighter-rouge">True</code></li>
+    </ul>
+  </li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="939887" _msttexthash="5505019">The  function should take a  as input, and return the optimal move for the player to move on that board.
+    </font><code class="highlighter-rouge">minimax</code><code class="highlighter-rouge">board</code><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1440452" _msttexthash="14833169">The move returned should be the optimal action  that is one of the allowable actions on the board. If multiple moves are equally optimal, any of those moves is acceptable.</font><code class="highlighter-rouge">(i, j)</code></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1441128" _msttexthash="1846715">If the  is a terminal board, the  function should return .</font><code class="highlighter-rouge">board</code><code class="highlighter-rouge">minimax</code><code class="highlighter-rouge">None</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p><font _mstmutation="1" _msthash="678236" _msttexthash="39250653">For all functions that accept a  as input, you may assume that it is a valid board (namely, that it is a list that contains three rows, each with three values of either , , or ). You should not modify the function declarations (the order or number of arguments to each function) provided.</font><code class="highlighter-rouge">board</code><code class="highlighter-rouge">X</code><code class="highlighter-rouge">O</code><code class="highlighter-rouge">EMPTY</code></p>
+
+<p><font _mstmutation="1" _msthash="678704" _msttexthash="53287377">Once all functions are implemented correctly, you should be able to run  and play against your AI. And, since Tic-Tac-Toe is a tie given optimal play by both sides, you should never be able to beat the AI (though if you don’t play optimally as well, it may beat you!)</font><code class="highlighter-rouge">python runner.py</code></p>
+
+<a data-id="" id="hints" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#hints" _msthash="695474" _msttexthash="61867">Hints</a></h2>
+
+<ul class="fa-ul">
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="934193" _msttexthash="6743412">If you’d like to test your functions in a different Python file, you can import them with lines like .</font><code class="highlighter-rouge">from tictactoe import initial_state</code></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="934739" _msttexthash="13112801">You’re welcome to add additional helper functions to , provided that their names do not collide with function or variable names already in the module.</font><code class="highlighter-rouge">tictactoe.py</code></li>
+  <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="935285" _msttexthash="3217474">Alpha-beta pruning is optional, but may make your AI run more efficiently!</font></li>
+</ul>
+
+<a data-id="" id="how-to-submit" style="top: 0px;"></a><h2><a data-id="" href="https://cs50.harvard.edu/ai/2020/projects/0/tictactoe/#how-to-submit" _msthash="696436" _msttexthash="182260">How to Submit</a></h2>
+
+<div class="alert alert-warning" data-alert="warning" role="alert">
+  <p _msthash="932243" _msttexthash="3563378">Effective <strong>1 July 2020</strong>, your submission must be structured exactly as follows:</p>
+
+<p><font _mstmutation="1" _msthash="932789" _msttexthash="56806633">You may not have your code in your  branch nested within any further subdirectories (such as a subdirectory called  or ). That is to say, if the staff attempts to access , where  is your GitHub username, that is exactly where your file should live. If your file is not at that location when the staff attempts to grade, your submission will fail.</font><code class="highlighter-rouge">ai50/projects/2020/x/tictactoe</code><code class="highlighter-rouge">tictactoe</code><code class="highlighter-rouge">project0b</code><code class="highlighter-rouge">https://github.com/me50/USERNAME/blob/ai50/projects/2020/x/tictactoe/tictactoe.py</code><code class="highlighter-rouge">USERNAME</code></p>
+</div>
+
+<ol>
+  <li _msthash="933062" _msttexthash="30300062">Visit <a href="https://submit.cs50.io/invites/8f7fa48876984cda98a73ba53bcf01fd">this link</a>, log in with your GitHub account, and click <strong>Authorize cs50</strong>. Then, check the box indicating that you’d like to grant course staff access to your submissions, and click <strong>Join course</strong>.</li>
+  <li _msthash="933608" _msttexthash="1407393"><a href="https://git-scm.com/downloads">Install Git</a> and, optionally, <a href="https://cs50.readthedocs.io/submit50/">install <code class="highlighter-rouge">submit50</code></a>.</li>
+  <li><font _mstmutation="1" _msthash="934154" _msttexthash="1907620">If you’ve installed , execute
+    </font><code class="highlighter-rouge">submit50</code><div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>submit50 ai50/projects/2020/x/tictactoe
+</code></pre></div>    </div>
+    <p><font _mstmutation="1" _msthash="1108146" _msttexthash="4490694">Otherwise, using Git, push your work to , where  is your GitHub username, on a branch called .</font><code class="highlighter-rouge">https://github.com/me50/USERNAME.git</code><code class="highlighter-rouge">USERNAME</code><code class="highlighter-rouge">ai50/projects/2020/x/tictactoe</code></p>
+  </li>
+  <li><font _mstmutation="1" _msthash="934700" _msttexthash="116127817"><a href="https://www.howtogeek.com/205742/how-to-record-your-windows-mac-linux-android-or-ios-screen/" _mstmutation="1">Record a 1- to 5-minute screencast</a> in which you demonstrate your project’s functionality. Be certain that every element of the specification, above, is demonstrated in your video. There’s no need to show your code, just your application in action; we’ll review your code on GitHub. <a href="https://www.youtube.com/upload" _mstmutation="1">Upload that video to YouTube</a> (as unlisted or public, but not private) or somewhere else.
+    </font><ul class="fa-ul">
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1435876" _msttexthash="6547801"><strong _mstmutation="1">VIDEO NOTE</strong>: Your video should show at least one game where the AI plays X and at least one game where the AI plays O.</font></li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1436552" _msttexthash="29669159">To aid in the staff’s review, in your video’s description on YouTube, you should timestamp where each of the following occurs. <strong _mstmutation="1">THIS IS NOT OPTIONAL</strong>. Failure to do this will result in your submission being rejected:
+        </font><ul class="fa-ul">
+          <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="2043457" _msttexthash="2854930">Game(s) where AI plays X (and you must state the result of those game(s))</font></li>
+          <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="2044263" _msttexthash="2851888">Game(s) where AI plays O (and you must state the result of those game(s))</font></li>
+        </ul>
+      </li>
+      <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="1437228" _msttexthash="3625544">As an example, your timestamps should follow this format (two examples below):
+        </font><ul class="fa-ul">
+          <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="2042651" _msttexthash="304304">0:08 - AI plays X (tie)</font></li>
+          <li data-marker="*"><span class="fa-li"><i class="fas fa-circle"></i></span><font _mstmutation="1" _msthash="2043458" _msttexthash="393315">0:44 - AI plays O (AI wins)</font></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li _msthash="935246" _msttexthash="278967">Submit <a href="https://forms.cs50.io/f94a8815-6237-47cb-9493-90b7be8f37bd">this form</a>.</li>
+</ol>
+
+<p _msthash="677287" _msttexthash="3032393">You can then go to <a href="https://cs50.me/cs50ai">https://cs50.me/cs50ai</a> to view your current progress!</p>
+
+
+                </main>
+
+            </div>
+
+        </div>
+
+        
+ 
+    
+
+
+</body></html>
